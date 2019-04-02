@@ -78,10 +78,10 @@ function insert_catalogue()
 	global $connection;
 
 	$data = json_decode(file_get_contents('php://input'), true);
-	$catalogue_name=$data["catalogue_name"];
-	$catalogue_salary=$data["catalogue_salary"];
-	$catalogue_age=$data["catalogue_age"];
-	echo $query="INSERT INTO catalogue SET catalogue_name='".$catalogue_name."', catalogue_salary='".$catalogue_salary."', catalogue_age='".$catalogue_age."'";
+	$sr=$data["sr"];
+	$en_description=$data["en_description"];
+	$materialdetails=$data["materialdetails"];
+	echo $query="INSERT INTO catalogue SET sr='".$sr."', en_description='".$en_description."', materialdetails='".$materialdetails."'";
 	if(mysqli_query($connection, $query))
 	{
 		$response=array(
@@ -104,10 +104,10 @@ function update_catalogue($id)
 {
 	global $connection;
 	$post_vars = json_decode(file_get_contents("php://input"),true);
-	$catalogue_name=$post_vars["catalogue_name"];
-	$catalogue_salary=$post_vars["catalogue_salary"];
-	$catalogue_age=$post_vars["catalogue_age"];
-	$query="UPDATE catalogue SET catalogue_name='".$catalogue_name."', catalogue_salary='".$catalogue_salary."', catalogue_age='".$catalogue_age."' WHERE id=".$id;
+	$sr=$data["sr"];
+	$en_description=$data["en_description"];
+	$materialdetails=$data["materialdetails"];
+	$query="UPDATE catalogue SET sr='".$sr."', en_description='".$en_description."', materialdetails='".$materialdetails."' WHERE id=".$id;
 	if(mysqli_query($connection, $query))
 	{
 		$response=array(
