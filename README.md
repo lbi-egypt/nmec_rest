@@ -1,4 +1,4 @@
-#Sample PHP restful
+# Sample PHP restful
 
 connect with database and display data as JSON format
 
